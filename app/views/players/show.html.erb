@@ -1,0 +1,47 @@
+<%= link_to "Back to All players", players_path %>
+
+<p>
+  <strong>First Name:</strong> <%= @player.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong> <%= @player.last_name %>
+</p>
+
+<p>
+  <strong>Position:</strong> <%= @player.position %>
+</p>
+
+<p>
+  <strong>Strong foot:</strong> <%= @player.strong_foot %>
+</p>
+
+
+<p>
+  <strong>Team:</strong> <%= @player.team %>
+</p>
+
+<!-- Add number -->
+
+<!-- League comes from external table-->
+
+<p>
+  <strong>Height:</strong> <%= @player.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong> <%= @player.weight %>
+</p>
+
+<p>
+  <strong>Bio:</strong> <%= @player.bio %>
+</p>
+
+<!-- Abilities come from external table -->
+
+<!-- Author comes from external table -->
+
+<!-- Photo comes from external table -->
+
+<br />
+<td><%= link_to "edit", edit_player_path(@player) %></td>
