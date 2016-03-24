@@ -16,8 +16,8 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      flash[:notice] = "Thanks for putting #{player} on the map!"
-      redirect_to character_path(@character)
+      flash[:notice] = "Thanks for putting this guy on the map!"
+      redirect_to player_path(@player)
     else
       flash.now[:error] = "Aww... Something went wrong, please try again!"
       render :new
@@ -31,8 +31,8 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
 
-    if @character.update(character_params)
-      redirect_to character_path(@character), notice: "Player was successfully updated!"
+    if @player.update(player_params)
+      redirect_to player_path(@player), notice: "Player was successfully updated!"
     else
       flash.now[:error] = "An error occurred when updating this player"
       render :edit
@@ -40,16 +40,16 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-    @character = Character.find(params[:id])
-    @character.destroy
+    @player = Player.find(params[:id])
+    @player.destroy
 
-    redirect_to characters_path, notice: "Character was successfully deleted"
+    redirect_to players_path, notice: "Player was successfully deleted"
   end
 
   private
 
-  def character_params
-   params.require(:character).permit(:first_name, :last_name, :height, :weight, :team, :number, :bio)
+  def player_params
+   params.require(:player).permit(:first_name, :last_name, :height, :weight, :team, :number, :bio, :position)
  end
 
 end
