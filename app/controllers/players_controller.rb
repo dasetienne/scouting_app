@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
     @player = Player.new
   end
 
-    def create
+  def create
     @player = Player.new(player_params)
 
     if @player.save
@@ -49,7 +49,7 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-   params.require(:player).permit(:first_name, :last_name, :height, :weight, :team, :number, :bio, :position, :author_id)
+   params.require(:player).permit(:first_name, :last_name, :height, :weight, :team, :number, :bio, :position, :author_id, ability_ids: [])
  end
 
 end

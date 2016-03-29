@@ -1,0 +1,15 @@
+<%= form_for @skill do |f| %>
+
+  <% if @skill.errors.any? %>
+    <% @skill.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.submit %>
+<% end %>

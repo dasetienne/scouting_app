@@ -50,6 +50,10 @@
   </p>
 
   <p>
+    <%= collection_check_boxes(:player, :skill_ids, Skill.all, :id, :name) %>
+  </p>
+
+  <p>
     <%= f.label :author %><br>
     <%= collection_select(:player, :author_id, Author.all, :id, :last_name, include_blank: true) %>
   </p>

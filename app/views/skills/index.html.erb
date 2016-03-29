@@ -1,0 +1,21 @@
+<h1>Add a Skill</h1>
+
+<%= link_to "Create a new Skill", new_skill_path %>
+
+<br />
+<br />
+
+<table>
+   <tr>
+     <th>Name</th>
+   </tr>
+   <tbody>
+     <% @skills.each do |skill| %>
+       <tr>
+         <td><%= link_to(skill.name, skill_path(skill)) %></td>
+         <td><%= link_to "edit", edit_skill_path(skill) %></td>
+        <td><%= link_to "delete", skill_path(skill), method: :delete, data: {confirm: "Do you really want to delete this Skill?"}%></td>
+        </tr>
+     <% end %>
+   </tbody>
+ </table> 

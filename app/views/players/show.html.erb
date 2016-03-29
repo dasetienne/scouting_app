@@ -37,6 +37,13 @@
   <strong>Bio:</strong> <%= @player.bio %>
 </p>
 
+<strong>Skills:</strong>
+<ul>
+  <% @player.skills.each do |skill| %>
+  <li><%= skill.name %></li>
+  <% end %>
+</ul>
+
 <!-- Abilities come from external table -->
 
 <!-- Author comes from external table -->
