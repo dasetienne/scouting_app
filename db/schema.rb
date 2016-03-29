@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324170145) do
+ActiveRecord::Schema.define(version: 20160329155132) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_skills", force: :cascade do |t|
+    t.integer  "player_id"
+    t.integer  "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +40,12 @@ ActiveRecord::Schema.define(version: 20160324170145) do
     t.string   "position"
     t.string   "strong_foot"
     t.integer  "author_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
