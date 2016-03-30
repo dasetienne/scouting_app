@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :authors
   resources :skills
   resources :teams
+  resources :leagues
   
   root "players#index"
 end

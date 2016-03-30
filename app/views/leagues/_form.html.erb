@@ -1,0 +1,16 @@
+<%= form_for @league do |f| %>
+
+  <% if @league.errors.any? %>
+    <% @league.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= f.label :league_name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+
+  <%= f.submit %>
+<% end %>

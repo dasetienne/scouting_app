@@ -1,0 +1,26 @@
+<h1>I am the Leagues Page</h1>
+
+<h1>Add a League to the App</h1>
+
+<%= link_to "Create a New League", new_league_path %>
+<%= link_to "Back to the Homepage", players_path %>
+
+<br />
+<br />
+<table>
+  <tr>
+    <th>League Name</th>
+    <th>League</th>
+  </tr>
+  <tbody>
+    <% @leagues.each do |league| %>
+      <tr>
+        <td><%= link_to(league.name, league_path(league)) %></td>
+        <!-- This is not ideal, might have to put the link on the image -->
+        <td><%= link_to "edit", edit_league_path(league) %></td>
+        <td><%= link_to "delete", league_path(league), method: :delete, data: {confirm: "Really want to delete this league?"}%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
