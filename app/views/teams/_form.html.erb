@@ -1,0 +1,16 @@
+<%= form_for @team do |f| %>
+
+  <% if @team.errors.any? %>
+    <% @team.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= f.label :team_name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,26 @@
+<h1>I am the Teams Page</h1>
+
+<h1>Add a Team to the App</h1>
+
+<%= link_to "Create a New Team", new_team_path %>
+<%= link_to "Back to the Homepage", players_path %>
+
+<br />
+<br />
+<table>
+  <tr>
+    <th>Team Name</th>
+    <th>League</th>
+  </tr>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= link_to(team.name, team_path(team)) %></td>
+        <!-- This is not ideal, might have to put the link on the image -->
+        <td><%= link_to "edit", edit_team_path(team) %></td>
+        <td><%= link_to "delete", team_path(team), method: :delete, data: {confirm: "Really want to delete this team?"}%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
