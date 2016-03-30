@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330201004) do
+ActiveRecord::Schema.define(version: 20160330212614) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160330201004) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "league_id"
   end
 
   create_table "skills", force: :cascade do |t|

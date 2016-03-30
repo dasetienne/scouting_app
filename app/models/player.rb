@@ -5,6 +5,7 @@ class Player < ActiveRecord::Base
   validates_attachment_content_type :photo,
     :content_type => /\Aimage\/.*\Z/
   belongs_to :author
+  belongs_to :league
   has_many :player_skills
   has_many :skills, through: :player_skills
   validates :first_name, presence: true
