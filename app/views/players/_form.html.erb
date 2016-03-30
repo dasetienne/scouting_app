@@ -40,9 +40,6 @@
     <%= f.label :team %><br>
     <%= f.text_field :team %>
   </p>
-  
-
-
 
   <p>
     <%= f.label :bio %><br>
@@ -52,6 +49,10 @@
   <p>
     <%= collection_check_boxes(:player, :skill_ids, Skill.all, :id, :name) %>
   </p>
+
+    <%= form_for @player, url: players_path, html: { multipart: true } do |form| %>
+    <%= form.file_field :avatar %>
+<% end %><br>
 
   <p>
     <%= f.label :author %><br>

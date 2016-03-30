@@ -1,5 +1,7 @@
 <%= link_to "Back to All players", players_path %>
 
+<p><%= image_tag @player.photo.url(:medium) %></p>
+
 <p>
   <strong>First Name:</strong> <%= @player.first_name %>
 </p>
@@ -15,7 +17,6 @@
 <p>
   <strong>Strong foot:</strong> <%= @player.strong_foot %>
 </p>
-
 
 <p>
   <strong>Team:</strong> <%= @player.team %>
@@ -43,12 +44,6 @@
   <li><%= skill.name %></li>
   <% end %>
 </ul>
-
-<!-- Abilities come from external table -->
-
-<!-- Author comes from external table -->
-
-<!-- Photo comes from external table -->
 
 <br />
 <td><%= link_to "edit", edit_player_path(@player) %></td>
