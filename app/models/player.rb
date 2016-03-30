@@ -6,6 +6,7 @@ class Player < ActiveRecord::Base
     :content_type => /\Aimage\/.*\Z/
   belongs_to :author
   belongs_to :league
+  belongs_to :team
   has_many :player_skills
   has_many :skills, through: :player_skills
   validates :first_name, presence: true
