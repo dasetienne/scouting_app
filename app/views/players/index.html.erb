@@ -10,6 +10,7 @@
 <br />
 <table>
   <tr>
+    <th></th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Position</th>
@@ -25,7 +26,8 @@
         <!-- This is not ideal, might have to put the link on the image -->
         <td><%= player.last_name %></td>
         <td><%= player.position %></td>
-        <td><%= player.team %></td>
+
+        <td><%= player.team.name %></td>
         <td><%= link_to "edit", edit_player_path(player) %></td>
         <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this baller?"}%></td>
       </tr>
