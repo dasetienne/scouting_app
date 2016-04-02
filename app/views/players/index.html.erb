@@ -21,9 +21,9 @@
   <tbody>
     <% @players.each do |player| %>
       <tr>
-        <td><%= link_to(player.first_name, player_path(player)) %></td>
+        
         <td><%= image_tag player.photo.url(:small) %></td>
-        <!-- This is not ideal, might have to put the link on the image -->
+        <td><%= link_to(player.first_name, player_path(player)) %></td>
         <td><%= player.last_name %></td>
         <td><%= player.position %></td>
 
