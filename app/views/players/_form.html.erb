@@ -1,12 +1,5 @@
 <%= form_for @player, :html => { :multipart => true } do |f|  %>
 
-<% form_tag players_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
   <% if @player.errors.any? %>
     <% @player.errors.full_messages.each do |message| %>
       <p><%= message %></p>
