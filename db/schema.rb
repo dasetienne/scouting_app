@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402155427) do
+ActiveRecord::Schema.define(version: 20160402203308) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 20160402155427) do
     t.text     "bio"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "position"
     t.string   "strong_foot"
     t.integer  "author_id"
     t.string   "photo_file_name"
@@ -61,6 +60,13 @@ ActiveRecord::Schema.define(version: 20160402155427) do
     t.datetime "photo_updated_at"
     t.integer  "league_id"
     t.integer  "team_id"
+    t.integer  "position_id"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|

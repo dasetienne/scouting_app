@@ -33,9 +33,9 @@
     <%= f.text_field :weight %>
   </p>
 
-   <p>
+  <p>
     <%= f.label :position %><br>
-    <%= f.text_field :position %>
+    <%= collection_select(:player, :position_id, Position.all, :id, :name, include_blank: true) %>
   </p>
 
    <p>

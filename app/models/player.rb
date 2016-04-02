@@ -9,6 +9,7 @@ class Player < ActiveRecord::Base
   belongs_to :author
   belongs_to :league
   belongs_to :team
+  belongs_to :position
   has_many :player_skills
   has_many :skills, through: :player_skills
   has_many :comments
