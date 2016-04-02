@@ -1,10 +1,9 @@
-<h1>I am the homepage</h1>
+<h1>Scout.me</h1>
 
-<h1>The New And Amazing Player Database</h1>
+<h1>Discover the biggest talents in German soccer</h1>
 
 <%= link_to "Create a New Player", new_player_path %>
 <%= link_to "Create a New Team", new_team_path %>
-
 
 <br />
 <br />
@@ -33,5 +32,12 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+  </table>
+
+<% form_tag players_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 

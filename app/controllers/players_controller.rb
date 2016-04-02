@@ -3,6 +3,7 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
+    Player.search(params[:search])
   end
 
   def show 
@@ -49,8 +50,8 @@ class PlayersController < ApplicationController
 
   private
 
-  def player_params
-   params.require(:player).permit(:photo, :first_name, :last_name, :height, :weight, :team_id, :number, :bio, :position_id, :author_id, :league_id, skill_ids: [])
- end
+   def player_params
+     params.require(:player).permit(:photo, :first_name, :last_name, :height, :weight, :team_id, :number, :bio, :position_id, :author_id, :league_id, skill_ids: [])
+  end
 
 end
