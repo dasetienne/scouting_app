@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show ]
 
   def index
     @players = Player.all
