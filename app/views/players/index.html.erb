@@ -28,16 +28,16 @@
 
         <td><%= player.team.name %></td>
         <td><%= link_to "edit", edit_player_path(player) %></td>
-        <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this baller?"}%></td>
+        <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td>
       </tr>
     <% end %>
   </tbody>
-  </table>
 
-<% form_tag players_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+  <img src="/images/leagues_map.jpg" alt="All leagues" height="400" width="400" />
+
+  <img src="/images/positions.png" alt="All Positions" height="400" width="400" />
+
+
+
+
 
