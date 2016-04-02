@@ -49,3 +49,11 @@
 
 <br />
 <td><%= link_to "edit", edit_player_path(@player) %></td>
+
+<div id="comments">
+  <h2><%= @player.comments.count %> Comments</h2>
+  <%= render @player.comments %>
+  <h3>Add a comment:</h3>
+  <%= render "comments/form"%>
+  </div>
+

@@ -11,6 +11,7 @@ class Player < ActiveRecord::Base
   belongs_to :team
   has_many :player_skills
   has_many :skills, through: :player_skills
+  has_many :comments
 
   validates :first_name, presence: true
   validates :last_name, presence: true
