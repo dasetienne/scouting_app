@@ -1,0 +1,16 @@
+<%= form_for @position do |f| %>
+
+  <% if @position.errors.any? %>
+    <% @position.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= f.label :position_name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+
+  <%= f.submit %>
+<% end %>

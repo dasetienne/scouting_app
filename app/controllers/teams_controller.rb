@@ -5,7 +5,8 @@ class TeamsController < ApplicationController
   end
 
   def show 
-    @team = Team.find(params[:id])
+    @team = Team.find(params[:id])   
+    @players = @team.players.order(created_at: :desc)
   end
 
   def new 

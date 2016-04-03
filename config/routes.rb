@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :skills
   resources :teams
   resources :leagues
+  resources :positions
 
 
   
