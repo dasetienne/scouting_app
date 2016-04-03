@@ -4,5 +4,23 @@
   <strong>League:</strong> <%= @league.name %>
 </p>
 
+<h3>Players</h3>
+
+<% @players.each do |player| %>
+      <tr>
+        
+        <td><%= image_tag player.photo.url(:small) %></td>
+        <strong><td><%= link_to(player.first_name, player_path(player)) %></td>
+        <td><%= player.last_name %></td>
+        <td>&nbsp 
+        </td>
+        <td>&nbsp 
+        </td>
+        <td>&nbsp 
+        </td>
+        <td><%= player.team.name %></td>
+        </strong><br><br>
+        <% end %>
+
 <br />
 <td><%= link_to "edit", edit_league_path(@league) %></td>

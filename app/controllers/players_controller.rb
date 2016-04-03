@@ -17,7 +17,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      flash[:notice] = "Thanks for putting this guy on the map!"
+      flash[:notice] = "Thanks for putting this player on the map!"
       redirect_to player_path(@player)
     else
       flash.now[:error] = "Aww... Something went wrong, please try again!"

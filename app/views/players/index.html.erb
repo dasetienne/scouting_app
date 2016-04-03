@@ -16,7 +16,7 @@
         </strong>
         <em><td><%= player.position.name %></td></em>
         <td><%= link_to "edit", edit_player_path(player) %></td>
-        <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td>
+        <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td><br>
 
         <% end %>
 
