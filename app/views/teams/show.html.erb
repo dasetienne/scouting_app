@@ -11,7 +11,7 @@
         
         <td><%= image_tag player.photo.url(:small) %></td>
         <strong><td><%= link_to(player.first_name, player_path(player)) %></td>
-        <td><%= player.last_name %></td>
+        <td><%= link_to(player.last_name, player_path(player)) %></td>
         <td>&nbsp 
         </td>
         <td>&nbsp 
