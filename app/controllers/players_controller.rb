@@ -3,7 +3,6 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
-    Player.search(params[:search])
   end
 
   def show 

@@ -19,11 +19,4 @@ class Player < ActiveRecord::Base
   validates :team, presence: true
   validates :position, presence: true
 
-  def self.search(term)
-    if term
-    self.where("last_name LIKE ?", "%#{searchTerm}%")
-    else
-    self.all
-    end
-  end
 end
