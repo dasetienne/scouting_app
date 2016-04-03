@@ -6,23 +6,17 @@
         <div class="col-md-4">
           <h2>All Players</h2>
           <p>
-            <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        
-        <td><%= image_tag player.photo.url(:small) %></td>
-        <strong><td><%= link_to(player.first_name, player_path(player)) %></td>
-        <td><%= link_to(player.last_name, player_path(player)) %></td>
-        </strong>
-        <em><td><%= player.position.name %></td></em>
-        <td><%= link_to "edit", edit_player_path(player) %></td>
-        <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td><br>
-        <% end %>
-
-        <%= form_tag(players_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Players" %>
-        <%= submit_tag "Search" %>
-
+      <tbody>
+        <% @players.each do |player| %>
+          <tr>
+          
+          <td><%= image_tag player.photo.url(:small) %></td>
+          <strong><td><%= link_to(player.first_name, player_path(player)) %></td>
+          <td><%= link_to(player.last_name, player_path(player)) %></td>
+          </strong>
+          <em><td><%= player.position.name %></td></em>
+          <td><%= link_to "edit", edit_player_path(player) %></td>
+          <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td><br>
         <% end %>
 
           </p>
