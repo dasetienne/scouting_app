@@ -3,6 +3,12 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
+
+    if params[:search]
+      @players = Player.search(params[:search]).order("created_at DESC")
+    else
+      @players = Player.all.order('created_at ASC')
+    end
   end
 
   def show 

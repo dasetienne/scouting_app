@@ -28,13 +28,17 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
             <div class="form-group">
-              <input type="text" placeholder="Search" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
+              <%= form_tag(players_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Players" %>
+              <button type="submit" class="btn btn-success">Submit</button>
+
+              <% end %>
+
+            
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
     <%= render 'partials/jumbotron' %>
 

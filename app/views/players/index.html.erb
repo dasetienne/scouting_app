@@ -17,9 +17,13 @@
         <em><td><%= player.position.name %></td></em>
         <td><%= link_to "edit", edit_player_path(player) %></td>
         <td><%= link_to "delete", player_path(player), method: :delete, data: {confirm: "Really want to delete this player?"}%></td><br>
-
         <% end %>
 
+        <%= form_tag(players_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Players" %>
+        <%= submit_tag "Search" %>
+
+        <% end %>
 
           </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
